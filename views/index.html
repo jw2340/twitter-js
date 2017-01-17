@@ -12,6 +12,20 @@
       100 followers
     </div>
     <div class="col-md-9">
+
+    <!-- add tweet here -->
+    {% if showForm %}
+      <form action="/tweets" method="POST">
+        <label for="name_field">Name:</label>
+        <input name="name" type="text" id="name_field" />
+
+        <label for="text_field">Text:</label>
+        <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+        <input type="submit" value="Submit" />
+      </form>
+    {% endif %}
+
     <h3 class="all-tweets-header">
       All Tweets
     </h3>
@@ -21,13 +35,15 @@
         <li class='tweet'>
           <div class="tweet-info">
             <span class='author'>
-            {{tweet.name}}
+            <a href="/users/{{tweet.name}}">{{tweet.name}}</a>
             </span>
             <span class='username'>
             @{{tweet.name.toLowerCase().replace(' ', '')}}
             </span>
           </div>
-          {{tweet.content}}
+          <a href="/tweets/{{tweet.id}}" class="tweet-content">
+            {{tweet.content}}
+          </a>
           <a href="" class="btn btn-primary retweet-btn tweet-action">Re-tweet</a>
         </li>
       {% endfor %}

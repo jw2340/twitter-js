@@ -50,6 +50,11 @@ h1, h3 {
   padding-bottom: 5px;
 }
 
+.tweet-content {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
