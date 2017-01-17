@@ -24,27 +24,6 @@ app.use('/', function (req, res, next) {
 
 app.use(express.static('public'));
 
-// app.use('/special/', function (req, res, next) {
-//   res.send('you reached special area');
-//   next();
-// });
-
-// app.use('/news', function (req, res, next) {
-//   res.send('visit news')
-// });
-
-// var locals = {
-//     title: 'An Example',
-//     people: [
-//         { name: 'Gandalf'},
-//         { name: 'Frodo' },
-//         { name: 'Hermione'}
-//     ]
-// };
 nunjucks.configure('views', {noCache: true});
-// nunjucks.render('index.html', locals, function (err, output) {
-//     console.log(output);
-// });
-
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);

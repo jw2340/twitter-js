@@ -12,10 +12,24 @@
       100 followers
     </div>
     <div class="col-md-9">
+    <h3 class="all-tweets-header">
+      All Tweets
+    </h3>
 
       <!-- display tweets here -->
       {% for tweet in tweets %}
-        <li>{{tweet.content}}</li>
+        <li class='tweet'>
+          <div class="tweet-info">
+            <span class='author'>
+            {{tweet.name}}
+            </span>
+            <span class='username'>
+            @{{tweet.name.toLowerCase().replace(' ', '')}}
+            </span>
+          </div>
+          {{tweet.content}}
+          <a href="" class="btn btn-primary retweet-btn tweet-action">Re-tweet</a>
+        </li>
       {% endfor %}
 
     </div>
